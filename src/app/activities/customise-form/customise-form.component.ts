@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class CustomiseFormComponent implements OnInit {
   modelForm: FormGroup;
+  @Output() customiseFormChanges: EventEmitter<any> = new EventEmitter<any>();
+
 
   constructor(private fb: FormBuilder) {
     this.modelForm = this.fb.group({
@@ -16,6 +18,9 @@ export class CustomiseFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.modelForm.valueChanges.subscribe(val => {
+      this.customiseFormChanges.emit(val);
+    });
   }
 
 }
