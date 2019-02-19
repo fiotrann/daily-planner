@@ -37,4 +37,8 @@ export class ActivitiesService {
       .filter((activity: ActivityModel) => activity !== item);
   }
 
+  public clearPlan() {
+    return this.dailyPlanList = [];
+  }
+
 }
