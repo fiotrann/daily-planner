@@ -13,7 +13,8 @@ export class CustomiseFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.modelForm = this.fb.group({
-      name: ''
+      name: '',
+      selectedDate: ''
     });
   }
 

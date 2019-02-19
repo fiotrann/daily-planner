@@ -7,6 +7,10 @@ import { ListActivitiesComponent } from './list-activities/list-activities.compo
 import { ViewPlanComponent } from './view-plan/view-plan.component';
 import { CustomiseFormComponent } from './customise-form/customise-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatDatepickerModule,
+  MatNativeDateModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [ActivitiesComponent, ListActivitiesComponent, ViewPlanComponent, CustomiseFormComponent],
@@ -15,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ActivitiesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ]
 })
 export class ActivitiesModule { }
