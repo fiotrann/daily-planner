@@ -22,4 +22,19 @@ export class ActivitiesService {
   public getPlan() {
     return this.dailyPlanList;
   }
+
+  public removeActivity(item: ActivityModel) {
+    return this.activitiesList = this.activitiesList
+      .filter((activity: ActivityModel) => activity !== item);
+  }
+
+  public updateActvitiesList(item: ActivityModel) {
+    return this.activitiesList.push(item);
+  }
+
+  public deletePlanItem(item: ActivityModel) {
+    return this.dailyPlanList = this.dailyPlanList
+      .filter((activity: ActivityModel) => activity !== item);
+  }
+
 }

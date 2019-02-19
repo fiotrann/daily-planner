@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivityModel } from 'src/app/data/activity.model';
 import { ActivitiesService } from 'src/app/services/activities.service';
 
@@ -10,11 +10,18 @@ import { ActivitiesService } from 'src/app/services/activities.service';
 })
 export class ViewPlanComponent implements OnInit {
   planList: ActivityModel[];
+  @Output() updateActivitiesList: EventEmitter<ActivityModel> = new EventEmitter<ActivityModel>();
+
 
   constructor(private activitiesService: ActivitiesService) { }
 
   ngOnInit() {
     this.planList = this.activitiesService.getPlan();
+  }
+
+  deleteFromDailyPlan(item: ActivityModel) {
+    this.planList = this.activitiesService.deletePlanItem(item);
+    this.updateActivitiesList.emit(item);
   }
 
 }
