@@ -7,10 +7,15 @@ import { ActivityModel } from '../data/activity.model';
 })
 export class ActivitiesService {
   activitiesList: ActivityModel[];
+  dailyPlanList: ActivityModel[] = [];
 
   constructor() { }
 
   public getActivities() {
     return this.activitiesList = ActivitiesConst;
+  }
+
+  public addToDailyPlanList(item: ActivityModel) {
+    this.dailyPlanList.push(item);
   }
 }
