@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivityModel } from 'src/app/data/activity.model';
 import { ActivitiesService } from 'src/app/services/activities.service';
 import { PlanModel } from 'src/app/data/plan.model';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -30,6 +31,10 @@ export class ViewPlanComponent implements OnInit {
   resetPlan() {
     this.planList = this.activitiesService.clearPlan();
     this.reloadActivities.emit(true);
+  }
+
+  drop(event: CdkDragDrop<any[]>) {
+    moveItemInArray(this.planList, event.previousIndex, event.currentIndex);
   }
 
 }

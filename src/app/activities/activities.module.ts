@@ -7,6 +7,9 @@ import { ListActivitiesComponent } from './list-activities/list-activities.compo
 import { ViewPlanComponent } from './view-plan/view-plan.component';
 import { CustomiseFormComponent } from './customise-form/customise-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
+
 import {
   MatDatepickerModule,
   MatNativeDateModule
@@ -21,6 +24,7 @@ import {
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    DragDropModule
   ]
 })
 export class ActivitiesModule { }
