@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivityModel } from 'src/app/data/activity.model';
 import { ActivitiesService } from 'src/app/services/activities.service';
+import { PlanModel } from 'src/app/data/plan.model';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { ActivitiesService } from 'src/app/services/activities.service';
 })
 export class ViewPlanComponent implements OnInit {
   planList: ActivityModel[];
+  @Input() formValues: PlanModel;
   @Output() updateActivitiesList: EventEmitter<ActivityModel> = new EventEmitter<ActivityModel>();
   @Output() reloadActivities: EventEmitter<boolean> = new EventEmitter<boolean>();
 
