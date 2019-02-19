@@ -18,4 +18,8 @@ export class ActivitiesService {
   public addToDailyPlanList(item: ActivityModel) {
     this.dailyPlanList.push(item);
   }
+
+  public getPlan() {
+    return this.dailyPlanList;
+  }
 }
